@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Update TODO{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Update TODO</h1>
+
+<!-- Form to Update TODO -->
+<form method="POST" action="">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{ todo.title }}" required>
+    </div>
+    <div class="form-group">
+        <label for="desc">Description</label>
+        <textarea class="form-control" id="desc" name="desc" rows="3" required>{{ todo.desc }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update TODO</button>
+</form>
+
+<!-- Back to Home -->
+<a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back to List</a>
+{% endblock %}
